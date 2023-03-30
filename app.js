@@ -9,6 +9,9 @@ require("./db");
 // https://www.npmjs.com/package/express
 const express = require("express");
 
+
+const { isAuthenticated } = require("./middleware/jwt.middleware");
+
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
@@ -23,6 +26,9 @@ app.use("/auth", authRoutes);
 
 const locationRoutes = require("./routes/location.routes");
 app.use("/api", locationRoutes);
+
+const eventsRoutes = require("./routes/event.routes");
+app.use("/api", isAuthenticated, eventsRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

@@ -23,7 +23,8 @@ const userSchema = new Schema(
       default: "https://images.unsplash.com/photo-1597769906792-4b2f9a3403a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
     },
     events: [{ type: Schema.Types.ObjectId, ref: 'Event' }],
-    attending: [{ type: Schema.Types.ObjectId, ref: 'Event' }]
+    attending: [{ type: Schema.Types.ObjectId, ref: 'Event' }],
+    comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }]
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
