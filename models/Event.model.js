@@ -18,6 +18,7 @@ const eventSchema = new Schema(
         creator: { type: Schema.Types.ObjectId, ref: 'User' },
         attending: [{ type: Schema.Types.ObjectId, ref: 'User' }],
         location: { type: Schema.Types.ObjectId, ref: 'Location' },
+        comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }]
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`

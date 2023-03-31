@@ -6,28 +6,7 @@ const Event = require("../models/Event.model");
 const Comment = require("../models/Comment.model");
 const User = require("../models/User.model");
 
-
-// router.post('/events', async (req, res, next) => {
-
-//     const { title, description, img, locationId } = req.body;
-
-//     console.log(req.body)
-//     console.log('WHAT THE FUCK')
-//     console.log(req.payload)
-//     //const userId = req.payload._id
-
-//     try {
-//         const event = await Event.create({ title, description, img, creator: '6425afc62ee8df2c9917db56', location: locationId, attending: [], comments: [] })
-//         const userUpdate = await User.findByIdAndUpdate('6425afc62ee8df2c9917db56', { $push: { events: event._id } })
-//         const locationUpdate = await Location.findByIdAndUpdate(locationId, { $push: { events: event._id } })
-//         res.json(event)
-//     } catch (err) {
-//         console.log(err)
-//     }
-// });
-
-
-router.post('/events', async (req, res, next) => {
+router.post('/new-event', async (req, res, next) => {
 
     const { title, description, img, locationId } = req.body;
 
@@ -44,6 +23,50 @@ router.post('/events', async (req, res, next) => {
     }
 });
 
+router.get("/events", async (req, res, next) => {
+    try {
+        const eventsDb = await Event.find().populate("creator location")
+        res.json(eventsDb)
+    } catch (error) {
+        res.json(error)
+    }
+})
+
+
+router.get("/events/:id", async (req, res, next) => {
+
+    const { id } = req.params
+    try {
+        const eventDb = await Event.findById(id).populate("creator attending location comments")
+        res.json(eventDb)
+    } catch (error) {
+        res.json(error)
+    }
+})
+
+//NEW
+
+router.put("/events/:id", async (req, res) => {
+
+    const { id } = req.params
+
+    try {
+        const eventDB = await Event.findByIdAndUpdate(id, req.body, { new: true })
+        res.json(eventDB)
+    } catch (error) {
+        res.json(error)
+    }
+})
+router.delete("/events/:id", async (req, res) => {
+    const { id } = req.params
+
+    try {
+        const eventDeleted = await Event.findByIdAndRemove(id)
+        res.json({ message: `event with id ${eventDeleted._id} deleted` })
+    } catch (error) {
+        res.json(error)
+    }
+})
 
 
 
