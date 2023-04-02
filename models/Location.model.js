@@ -7,8 +7,20 @@ const locationSchema = new Schema(
     {
         title: {
             type: String,
-            required: [true, "Email is required."],
+            required: true,
             unique: true,
+            lowercase: true,
+            trim: true,
+        },
+        country: {
+            type: String,
+            required: true,
+            lowercase: true,
+            trim: true,
+        },
+        city: {
+            type: String,
+            required: true,
             lowercase: true,
             trim: true,
         },
