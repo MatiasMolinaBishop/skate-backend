@@ -49,6 +49,33 @@ const locations = [
         latitude: 2.172335130480978,
         img: "https://images.unsplash.com/photo-1582486759052-fb6b5c90fa50?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2thdGVwYXJrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
         description: "The one and only pupmtrack in the city."
+    },
+    {
+        title: "Fòrum Skate Park",
+        country: "Spain",
+        city: "Barcelona",
+        altitude: 41.409834482951986,
+        latitude: 2.232208692210482,
+        img: "https://images.unsplash.com/photo-1522602398-e378288fe36d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c2thdGVwYXJrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60",
+        description: "Small skatepark with ocean view. Good place to cruise around."
+    },
+    {
+        title: "Ciutadella Skateplaça",
+        country: "Spain",
+        city: "Barcelona",
+        altitude: 41.38779313661121,
+        latitude: 2.1940891358680523,
+        img: "https://media.istockphoto.com/id/1457553359/photo/cheerful-old-man-playing-with-a-skateboard-in-a-park.jpg?b=1&s=170667a&w=0&k=20&c=en1LEe5jYzFxdu8qS1QjT0i7YkXyvD1QPkqWGWE9op4=",
+        description: "Legendary placa for street skating."
+    },
+    {
+        title: "Olas",
+        country: "Spain",
+        city: "Barcelona",
+        altitude: 41.423623653168164,
+        latitude: 2.2069484602391123,
+        img: "https://media.istockphoto.com/id/914847274/photo/aerial-view-of-skatepark.jpg?b=1&s=170667a&w=0&k=20&c=QuZsSOi2OcLcgcR0LhGxVI6J3APfRVAiqkJMU8IsgMI=",
+        description: "Small but perfect place to practice surf skating."
     }
 ]
 
