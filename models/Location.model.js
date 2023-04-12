@@ -24,6 +24,11 @@ const locationSchema = new Schema(
             lowercase: true,
             trim: true,
         },
+        address: {
+            type: String,
+            required: true,
+        },
+
         altitude: {
             type: Number,
             required: true
