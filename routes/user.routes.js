@@ -32,7 +32,7 @@ router.get('/profile/:userId', async (req, res, next) => {
     const { userId } = req.params
 
     try {
-        const response = await User.findById(userId)
+        const response = await User.findById(userId).populate("comments events attending")
         res.json(response)
     } catch (err) {
         console.log(err)

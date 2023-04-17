@@ -8,13 +8,13 @@ const User = require("../models/User.model");
 
 router.post('/new-event', async (req, res, next) => {
 
-    const { title, description, img, locationId } = req.body;
+    const { title, description, img, locationId, date } = req.body;
 
     console.log(req.payload)
     const userId = req.payload._id
 
     try {
-        const event = await Event.create({ title, description, img, creator: userId, location: locationId, attending: [], comments: [] })
+        const event = await Event.create({ title, description, img, date, creator: userId, location: locationId, attending: [], comments: [] })
         const userUpdate = await User.findByIdAndUpdate(userId, { $push: { events: event._id } })
         const locationUpdate = await Location.findByIdAndUpdate(locationId, { $push: { events: event._id } })
         res.json(event)
