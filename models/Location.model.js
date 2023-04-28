@@ -24,6 +24,12 @@ const locationSchema = new Schema(
             lowercase: true,
             trim: true,
         },
+        board: {
+            type: String,
+            required: true,
+            lowercase: true,
+            trim: true,
+        },
         address: {
             type: String,
             required: true,
