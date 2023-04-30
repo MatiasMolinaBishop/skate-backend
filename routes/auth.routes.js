@@ -112,7 +112,7 @@ router.post("/login", (req, res, next) => {
         // Send the token as the response
         res.status(200).json({ authToken: authToken });
       } else {
-        res.status(401).json({ message: "Username or password are incorrect. Please try again" });
+        res.status(401).json({ message: "Username or password are incorrect. Please try againgit" });
       }
     })
     .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
